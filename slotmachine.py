@@ -33,7 +33,7 @@ else:
     print("You have chosen to play straight away.")
 
 # Start the game and begin the loop
-for number in range(1000):
+while True:
     
     # As the user how much they want to bet
     Amount = int(input("How much would you like to bet? "))
