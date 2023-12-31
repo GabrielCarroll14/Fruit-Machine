@@ -1,5 +1,5 @@
 # Create a random password for money import called randompass1
-randompass1 = "1234"
+randompass1 = "" # To be set by admin
 
 # Import the random module
 import random
