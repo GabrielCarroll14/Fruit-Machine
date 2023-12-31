@@ -4,8 +4,11 @@ randompass1 = "1234"
 # Import the random module
 import random
 
-# create the user's balance
+# Create the user's balance
 Balance = 100
+
+# Create the users score
+score = 0
 
 # Startup the machine and give the user an introductory message
 print("Welcome to Slot-Machine, increase your balance to earn more rewards:")
@@ -62,7 +65,18 @@ for number in range(1000):
         # Give user a warning if their ballance falls below the recommended amount.
         if Balance < 15:
             print ("WARNING! BALANCE EXTREMELY LOW! ")
+            
+        # Update the score
+        if Balance >= score:
+            # Assign the data in the Balance variable into the score variable
+            score = Balance
+            # Display a message to the user saying that they have a new high score
+            print ("New High Score of " + str(score) + "! ")
     
+            # Open or create a file to hold the scores
+            with open('scores.txt', 'a') as scores:
+                scores.write(str(score) + '\n')
+            
     # User lose scenario.    
     else:
         print (" ")
@@ -72,6 +86,17 @@ for number in range(1000):
         print (" ")
         print ("You lost! ")
         print("Your balance is now £" + str(Balance) + "! ")
+        
+        # Update the score
+        if Balance >= score:
+            # Assign the data in the Balance variable into the score variable
+            score = Balance
+            # Display a message to the user saying that they have a new high score
+            print ("New High Score of " + str(score) + "! ")
+            
+            # Open or create a file to hold the scores
+            with open('scores.txt', 'a') as scores:
+                scores.write(str(score) + '\n')
         
         # Give user a warning if their ballance falls below the recommended amount.
         if Balance < 15:
