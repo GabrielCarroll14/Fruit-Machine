@@ -23,12 +23,23 @@ if startup == "I":
 
     # ask the user how much they would like to import
     if upass == randompass1:
+        
+        # Print a message to the user confirming that they have decided to import more money
         print("You have chosen to import more money to your balance.")
+        
+        # Ask the user how much they would like to import
         uamount = int(input("How much would you like to import? "))
+        
+        # Update the balance after import
         Balance = Balance + uamount
+        
+        # Give the user a message confirming there new balance
         print("Your balance is now £"  + str(Balance) + ". ")
+    
+    # If the user gets an incorrect admin password
     else:
         print("Incorrect password. Import aborted.")
+
 else:
     print("You have chosen to play straight away.")
 
