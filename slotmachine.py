@@ -7,9 +7,7 @@ score = 0
 # Import the random module
 import random
 
-# Start of game setup
-
-# Run the login function
+# Ask the user for a username
 while True:
         print ("Welcome to Slot-Machine!")
         u_name = input ("Please enter a username. ")
@@ -29,9 +27,9 @@ while True:
         amount = int(input("How much would you like to bet? "))
         balance = balance - amount
 
-        spin1 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven  ❼"])
-        spin2 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven  ❼"])
-        spin3 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven  ❼"])
+        spin1 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
+        spin2 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
+        spin3 = random.choice(["Cherry 🍒", "Orange 🍊", "Plum   🫐", "Bell   🔔", "Bar    🍫", "Seven   ❼"])
 
         # User win scenario.
         if spin1 == spin2 == spin3:
@@ -68,3 +66,6 @@ while True:
         with open("scores.txt", "r") as scores:
             content = scores.read()
             print(content)
+
+    else:
+        print ("Please enter a valid input. ")
