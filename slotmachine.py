@@ -20,6 +20,12 @@ while True:
             print ("You have decided to reset your user name.")
 
 while True:
+    
+    # If the user goes bancrupt, break the loop
+    if balance < 1:
+        print ("you are now bancrupt! Please start again. ")
+        break
+    
     print ("What would you like to do? View high scores or play? (play, view) ")
     vorp = input ("Please select an option. ")
     
