@@ -44,7 +44,7 @@ while True:
             print("You won! ")
             print ("Your balance is now £" + str(balance) + "! ")
             if balance > score:
-                print ("New high score of " + score + "! ")
+                print ("New high score of " + str(score) + "! ")
                 score = balance
                 with open ("scores.txt", "a") as scores:
                     scores.write (" " + u_name + " | £" + str(score) + "\n")
@@ -59,7 +59,7 @@ while True:
             print ("You lost! ")
             print("Your balance is now £" + str(balance) + "! ")
             if balance > score:
-                print ("New high score of " + score + "! ")
+                print ("New high score of " + str(score) + "! ")
                 score = balance
                 with open ("scores.txt", "a") as scores:
                     scores.write (" " + u_name + " | £" + str(score) + "\n")
