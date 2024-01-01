@@ -48,9 +48,12 @@ while True:
             print("You won! ")
             print ("Your balance is now £" + str(balance) + "! ")
             if balance > score:
-                print ("New high score of " + str(score) + "! ")
                 score = balance
+                # print a message to the user telling them their current score
+                print ("New high score of " + str(score) + "! ")
+                # Open "scores.txt" as scores
                 with open ("scores.txt", "a") as scores:
+                    # Write the user high score to "scores.txt" on a new line
                     scores.write (" " + u_name + " | £" + str(score) + "\n")
                 
         # User lose scenario.    
@@ -62,16 +65,25 @@ while True:
             print (" ")
             print ("You lost! ")
             print("Your balance is now £" + str(balance) + "! ")
+            # If balance is higher than current score
             if balance > score:
                 score = balance
+                # print a message to the user telling them their current score
                 print ("New high score of " + str(score) + "! ")
-                with open ("scores.txt", "a") as scores:
+                # Open "scores.txt" as scores
+                with open ("scores.txt", "a") as scores: # Open in append mode
+                    # Write the user high score to "scores.txt" on a new line
                     scores.write (" " + u_name + " | £" + str(score) + "\n")
-                    
+    
+    # Read the scores                
     elif vorp == "view":
-        with open("scores.txt", "r") as scores:
+        # Open "scores.txt" as scores
+        with open("scores.txt", "r") as scores: # open scores in read mode
+            # Save the contents of "scores.txt" in the variable content
             content = scores.read()
+            # print content
             print(content)
 
+    # Give the user a message tellign them to enter a valid input
     else:
-        print ("Please enter a valid input. ")
+        print ("Please enter a valid input. Please retry. ")
