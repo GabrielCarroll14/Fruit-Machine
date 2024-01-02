@@ -48,14 +48,23 @@ while True:
             print (" ")
             print("You won! ")
             print ("Your balance is now £" + str(balance) + "! ")
+            
+            # Update the score
             if balance > score:
                 score = balance
+                
                 # print a message to the user telling them their current score
                 print ("New high score of " + str(score) + "! ")
+                
                 # Open "scores.txt" as scores
                 with open ("scores.txt", "a") as scores:
+                    
                     # Write the user high score to "scores.txt" on a new line
                     scores.write (" " + u_name + " | £" + str(score) + "\n")
+                    
+            # Tell the user if their balance is low
+                if balance <= 15:
+                    print ("Balance Low! ")
                 
         # User lose scenario.    
         else:
@@ -66,22 +75,35 @@ while True:
             print (" ")
             print ("You lost! ")
             print("Your balance is now £" + str(balance) + "! ")
-            # If balance is higher than current score
+            
+            # Update the score
             if balance > score:
                 score = balance
+                
                 # print a message to the user telling them their current score
                 print ("New high score of " + str(score) + "! ")
+                
                 # Open "scores.txt" as scores
                 with open ("scores.txt", "a") as scores: # Open in append mode
+                    
                     # Write the user high score to "scores.txt" on a new line
                     scores.write (" " + u_name + " | £" + str(score) + "\n")
+                    
+            # Tell the user if thier balance is low
+            if balance <= 15:
+                print ("Balance Low! ")
+                    
+            
     
     # Read the scores                
     elif vorp == "view":
+        
         # Open "scores.txt" as scores
         with open("scores.txt", "r") as scores: # open scores in read mode
+            
             # Save the contents of "scores.txt" in the variable content
             content = scores.read()
+            
             # print content
             print(content)
 
