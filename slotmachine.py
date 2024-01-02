@@ -7,18 +7,37 @@ score = 0
 # Import the random module
 import random
 
-# Ask the user for a username
+# Create a loop while asking the user for username
 while True:
+        
+        # Print the user a welcome message
         print ("Welcome to Slot-Machine!")
+        
+        # Prompt the user to enter their username
         u_name = input ("Please enter a username. ")
+        
+        # Read back the name to them
         print ("Your user name will be " + u_name + ". ")
+        
+        # Ask the user if they are sure they would like it to be their name
         choice = input ("Are you sure you would like this to be your user name? (y, n) ")
+        
+        # If they are sure
         if choice == "y":
+            
+            # Print a message confirming thay have chosen to keep that name
             print ("Great! Your name will be " + u_name + "! ")
+            
+            # Break out of the loop
             break
+        
+        # If they are not sure
         if choice == "n":
+            
+            # Tell the user that they have decided to reset your username then return to the start of the loop
             print ("You have decided to reset your user name.")
 
+# Create a loop
 while True:
     
     # If the user goes bancrupt, break the loop
